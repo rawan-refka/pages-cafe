@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a1a;
+    color: #333;
+}
+
+.hero-section {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.logo-text {
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+}
+
+.logo-text span {
+    font-weight: 700;
+    color: #d4af37;
+}
+
+.tagline {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+.language-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(0,0,0,0.8);
+    padding: 8px 15px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 5px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.lang-btn.active {
+    background: #d4af37;
+    color: #1a1a1a;
+}
+
+.lang-btn:hover {
+    background: #d4af37;
+    color: #1a1a1a;
+}
+
+.container {
+    max-width: 700px;
+    margin: -80px auto 50px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.booking-card {
+    background: #2c2418;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.booking-card h2 {
+    color: #d4af37;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #d4af37;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+label i {
+    margin-left: 8px;
+    color: #d4af37;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: #3d3224;
+    border: 1px solid #5a4a35;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #f5e6d3;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+input::placeholder, textarea::placeholder {
+    color: #7a6b5a;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #d4af37 0%, #b8960c 100%);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.submit-btn i {
+    margin-left: 10px;
+}
+
+#message {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    display: none;
+    font-weight: 500;
+}
+
+.success {
+    background: rgba(40, 167, 69, 0.2);
+    border: 1px solid #28a745;
+    color: #28a745;
+    display: block;
+}
+
+.error {
+    background: rgba(220, 53, 69, 0.2);
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    display: block;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #7a6b5a;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 40px;
+    }
+    
+    .booking-card {
+        padding: 25px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .language-switch {
+        top: 10px;
+        right: 10px;
+    }
+}
