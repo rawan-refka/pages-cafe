@@ -38,6 +38,40 @@ async function addReservationToSheet(reservation) {
     }
 }
 
+// ========== دوال تنسيق التاريخ والوقت ==========
+function formatDate(dateValue) {
+    if (!dateValue) return 'No date';
+    try {
+        if (typeof dateValue === 'string' && dateValue.includes('T')) {
+            const d = new Date(dateValue);
+            return d.toISOString().split('T')[0];
+        }
+        if (typeof dateValue === 'number') {
+            const date = new Date((dateValue - 25569) * 86400 * 1000);
+            return date.toISOString().split('T')[0];
+        }
+        return dateValue.split('T')[0];
+    } catch(e) {
+        return dateValue;
+    }
+}
+
+function formatTime(timeValue) {
+    if (!timeValue) return 'No time';
+    try {
+        if (typeof timeValue === 'string' && timeValue.includes('T')) {
+            const d = new Date(timeValue);
+            return d.toTimeString().slice(0, 5);
+        }
+        if (typeof timeValue === 'string' && timeValue.includes(':')) {
+            return timeValue.slice(0, 5);
+        }
+        return timeValue;
+    } catch(e) {
+        return timeValue;
+    }
+}
+
 // ========== التخزين المحلي (احتياطي) ==========
 const STORAGE_KEY = 'cafe_reservations';
 
@@ -189,8 +223,12 @@ async function loadReservationsForDashboard() {
     }
     
     reservations.sort((a, b) => {
-        if (a.Date !== b.Date) return a.Date.localeCompare(b.Date);
-        return a.Time.localeCompare(b.Time);
+        const dateA = a.Date || a.date;
+        const dateB = b.Date || b.date;
+        if (dateA !== dateB) return dateA.localeCompare(dateB);
+        const timeA = a.Time || a.time;
+        const timeB = b.Time || b.time;
+        return timeA.localeCompare(timeB);
     });
     
     let html = '';
@@ -201,7 +239,7 @@ async function loadReservationsForDashboard() {
                 <p>📞 ${res.Phone || res.customerPhone}</p>
                 <p>🏢 ${res.Branch || res.branch}</p>
                 <p>👥 ${res.People || res.peopleCount} people</p>
-                <p>📅 ${res.Date || res.date} | ⏰ ${res.Time || res.time}</p>
+                <p>📅 ${formatDate(res.Date || res.date)} | ⏰ ${formatTime(res.Time || res.time)}</p>
                 <p>📝 ${res.Notes || res.notes || 'No notes'}</p>
                 <p>🆔 ${res.ID || res.id}</p>
                 <small>⏱️ ${new Date(res['Created At'] || res.createdAt).toLocaleString()}</small>
