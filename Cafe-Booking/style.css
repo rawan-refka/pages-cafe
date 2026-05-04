@@ -6,13 +6,14 @@
 
 body {
     font-family: 'Cormorant Garamond', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #1a1a1a;
+    background: #3D0C1B; /* برغندي غامق جداً للخلفية الخارجية */
     color: #333;
 }
 
+/* Hero Section */
 .hero-section {
     height: 50vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3');
+    background: linear-gradient(rgba(58, 12, 25, 0.8), rgba(58, 12, 25, 0.9)), url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -36,30 +37,33 @@ body {
 
 .logo-text span {
     font-weight: 700;
-    color: #d4af37;
+    color: #C6A43F; /* ذهبي دافئ */
 }
 
 .tagline {
     font-size: 20px;
     letter-spacing: 2px;
     font-style: italic;
+    color: #E8D5B7;
 }
 
+/* Language Switch */
 .language-switch {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 1000;
-    background: rgba(0,0,0,0.8);
+    background: rgba(74, 21, 37, 0.9);
     padding: 8px 15px;
     border-radius: 50px;
     backdrop-filter: blur(10px);
+    border: 1px solid #C6A43F;
 }
 
 .lang-btn {
     background: transparent;
-    border: 1px solid #d4af37;
-    color: #d4af37;
+    border: 1px solid #C6A43F;
+    color: #C6A43F;
     padding: 5px 15px;
     margin: 0 5px;
     cursor: pointer;
@@ -69,15 +73,16 @@ body {
 }
 
 .lang-btn.active {
-    background: #d4af37;
-    color: #1a1a1a;
+    background: #C6A43F;
+    color: #3D0C1B;
 }
 
 .lang-btn:hover {
-    background: #d4af37;
-    color: #1a1a1a;
+    background: #C6A43F;
+    color: #3D0C1B;
 }
 
+/* Container */
 .container {
     max-width: 700px;
     margin: -80px auto 50px;
@@ -87,15 +92,15 @@ body {
 }
 
 .booking-card {
-    background: #2c2418;
+    background: #4A1525; /* برغندي غامق */
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(198, 164, 63, 0.3);
 }
 
 .booking-card h2 {
-    color: #d4af37;
+    color: #C6A43F; /* ذهبي */
     text-align: center;
     font-size: 32px;
     margin-bottom: 30px;
@@ -103,6 +108,7 @@ body {
     letter-spacing: 2px;
 }
 
+/* Form Elements */
 .form-group {
     margin-bottom: 25px;
 }
@@ -116,7 +122,7 @@ body {
 label {
     display: block;
     margin-bottom: 8px;
-    color: #d4af37;
+    color: #C6A43F;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 1px;
@@ -124,29 +130,29 @@ label {
 
 label i {
     margin-left: 8px;
-    color: #d4af37;
+    color: #C6A43F;
 }
 
 input, select, textarea {
     width: 100%;
     padding: 14px 18px;
-    background: #3d3224;
-    border: 1px solid #5a4a35;
+    background: #5C1D33; /* برغندي فاتح */
+    border: 1px solid #7A2E44;
     border-radius: 12px;
     font-size: 16px;
-    color: #f5e6d3;
+    color: #F5E6D3;
     font-family: inherit;
     transition: all 0.3s;
 }
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: #d4af37;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    border-color: #C6A43F;
+    box-shadow: 0 0 0 3px rgba(198, 164, 63, 0.2);
 }
 
 input::placeholder, textarea::placeholder {
-    color: #7a6b5a;
+    color: #A87A6E;
 }
 
 textarea {
@@ -154,11 +160,12 @@ textarea {
     min-height: 80px;
 }
 
+/* Submit Button */
 .submit-btn {
     width: 100%;
     padding: 16px;
-    background: linear-gradient(135deg, #d4af37 0%, #b8960c 100%);
-    color: #1a1a1a;
+    background: linear-gradient(135deg, #C6A43F 0%, #A67C2E 100%);
+    color: #3D0C1B;
     border: none;
     border-radius: 12px;
     font-size: 18px;
@@ -171,13 +178,15 @@ textarea {
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 25px rgba(198, 164, 63, 0.3);
+    background: linear-gradient(135deg, #D4AF37 0%, #C6A43F 100%);
 }
 
 .submit-btn i {
     margin-left: 10px;
 }
 
+/* Message */
 #message {
     margin-top: 25px;
     padding: 15px;
@@ -201,13 +210,26 @@ textarea {
     display: block;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 30px;
-    color: #7a6b5a;
+    color: #A87A6E;
     font-size: 14px;
 }
 
+/* RTL Support */
+[dir="ltr"] .container,
+[dir="ltr"] .booking-card {
+    direction: ltr;
+    text-align: left;
+}
+
+[dir="ltr"] .form-row {
+    direction: ltr;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .logo-text {
         font-size: 40px;
